@@ -20,7 +20,8 @@ stages:
     steps:
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
-- stage: Test
+- stage: DeployQA
+  dependsOn: Build
   jobs:
   - job: job1
     steps:
@@ -30,7 +31,19 @@ stages:
     steps:
     - script: echo Hello, world!
       displayName: 'Run a one-line script'
-- stage: Deploy
+- stage: DeployPrePod
+  dependsOn: DeployQA
+  jobs:
+  - job: job1
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
+  - job: job2
+    steps:
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
+- stage: DeployProd
+  dependsOn: DeployQA
   jobs:
   - job: job1
     steps:
