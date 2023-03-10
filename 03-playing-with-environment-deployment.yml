@@ -3,7 +3,7 @@ strategy:
     linux:
       operatingSystem: ubuntu-latest
     mac:
-      opeartingSystem: macos-latest
+      operatingSystem: macos-latest
 
 trigger:
 - main
