@@ -11,47 +11,50 @@ pool:
 
 stages:
 - stage: Build
+  variables:
+    job1: sampathsandadi job
+    job2: sindhuchiluka job
   jobs:
-  - job: job1
+  - job: $(job1)
     steps:
     - script: echo $(build)1
       displayName: 'Run a one-line script'
-  - job: job2
+  - job: $(job2)
     steps:
     - script: echo $(build)1
       displayName: 'Run a one-line script'
-- stage: DeployDev
-  dependsOn: Build
-  jobs:
-  - job: job1
-    steps:
-    - script: echo $(dev)1
-      displayName: 'Run a one-line script'
-  - job: job2
-    steps:
-    - script: echo $(dev)2
-      displayName: 'Run a one-line script'
-- stage: DeployQA
-  dependsOn: Build
-  jobs:
-  - job: job1
-    steps:
-    - script: echo $(qa)1
-      displayName: 'Run a one-line script'
-  - job: job2
-    steps:
-    - script: echo $(qa)2
-      displayName: 'Run a one-line script'
-- stage: DeployProd
-  dependsOn: 
-  - DeployQA
-  - DeployDev
-  jobs:
-  - job: job1
-    steps:
-    - script: echo $(prod)1
-      displayName: 'Run a one-line script'
-  - job: job2
-    steps:
-    - script: echo $(prod)2
-      displayName: 'Run a one-line script'
+# - stage: DeployDev
+#   dependsOn: Build
+#   jobs:
+#   - job: job1
+#     steps:
+#     - script: echo $(dev)1
+#       displayName: 'Run a one-line script'
+#   - job: job2
+#     steps:
+#     - script: echo $(dev)2
+#       displayName: 'Run a one-line script'
+# - stage: DeployQA
+#   dependsOn: Build
+#   jobs:
+#   - job: job1
+#     steps:
+#     - script: echo $(qa)1
+#       displayName: 'Run a one-line script'
+#   - job: job2
+#     steps:
+#     - script: echo $(qa)2
+#       displayName: 'Run a one-line script'
+# - stage: DeployProd
+#   dependsOn: 
+#   - DeployQA
+#   - DeployDev
+#   jobs:
+#   - job: job1
+#     steps:
+#     - script: echo $(prod)1
+#       displayName: 'Run a one-line script'
+#   - job: job2
+#     steps:
+#     - script: echo $(prod)2
+#       displayName: 'Run a one-line script'
