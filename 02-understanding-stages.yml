@@ -12,8 +12,10 @@ pool:
 stages:
 - stage: Build
   variables:
-    1: sampathsandadi job
-    2: sindhuchiluka job
+  - name: 1
+    value: sampathsandadi job
+  - name: 2
+    value: sindhuchiluka job
   jobs:
   - job: job1
     steps:
