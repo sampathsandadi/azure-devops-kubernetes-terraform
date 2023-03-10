@@ -8,8 +8,8 @@ pool:
 stages:
 - template: 
   parameters:
-    name: testname
-    password: testpassword
+    name: ${{testname}}
+    password: ${{testpassword}}
 
 
 
