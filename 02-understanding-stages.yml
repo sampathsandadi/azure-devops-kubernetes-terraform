@@ -12,16 +12,16 @@ pool:
 stages:
 - stage: Build
   variables:
-    job1: sampathsandadi job
-    job2: sindhuchiluka job
+    1: sampathsandadi job
+    2: sindhuchiluka job
   jobs:
   - job: $(job1)
     steps:
-    - script: echo $(build)1
+    - script: echo $(build) $(1)
       displayName: 'Run a one-line script'
   - job: $(job2)
     steps:
-    - script: echo $(build)1
+    - script: echo $(build) $(2)
       displayName: 'Run a one-line script'
 # - stage: DeployDev
 #   dependsOn: Build
