@@ -1,9 +1,9 @@
 strategy:
   matrix:
     linux:
-      operatingSystem: 'ubuntu-latest'
+      operatingSystem: ubuntu-latest
     mac:
-      opeartingSystem: 'macos-latest'
+      opeartingSystem: macos-latest
 
 trigger:
 - main
