@@ -44,8 +44,8 @@ stages:
       displayName: 'Run a one-line script'
 - stage: DeployProd
   dependsOn: 
-    DeployQA
-    DeployDev
+  - DeployQA
+  - DeployDev
   jobs:
   - job: job1
     steps:
