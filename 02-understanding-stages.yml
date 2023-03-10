@@ -13,9 +13,9 @@ stages:
 - stage: Build
   variables:
   - name: 1
-    value: sampathsandadi job
+    value: changed variable 1
   - name: 2
-    value: sindhuchiluka job
+    value: changed variable 2
   jobs:
   - job: job1
     steps:
