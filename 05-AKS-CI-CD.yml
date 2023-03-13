@@ -49,7 +49,7 @@ stages:
     - task: KubernetesManifest@0
       inputs:
         action: 'deploy'
-        kubernetesServiceConnection: 'aks-kubernetes'
+        kubernetesServiceConnection: 'google-gke-kubernetes'
         namespace: 'default'
         manifests: '$(System.ArtifactsDirectory)/configuration/kubernetes/deployment.yaml'
         containers: 'sampathsandadi/currency-exchange-devops:$(tag)'
